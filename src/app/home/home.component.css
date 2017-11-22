@@ -1,0 +1,9 @@
+.home {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.btn-download {
+  position: absolute;
+  right: 23px;
+}

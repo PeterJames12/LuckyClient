@@ -1,0 +1,23 @@
+<div align="center">
+  <span *ngIf="currentJackpot" class="home"> Current Jackpot {{currentJackpot.ether}} ethereum</span>
+  <br>
+  <br>
+  <span *ngIf="theLastWinner && currentJackpot" class="home">The last winner's address {{theLastWinner.address}}</span>
+</div>
+
+<button class="btn btn-success" (click)="findWinner()">Find winner</button>
+<button class="btn btn-primary btn-download" (click)="reload()">Reload</button>
+<br>
+<br>
+
+<div *ngIf="jackpotTable.length">
+  <span class="home">Jackpot table</span>
+  <ng2-smart-table style="font-size: 17px" [settings]="settings" [source]="jackpotTable"></ng2-smart-table>
+</div>
+
+<google-chart *ngIf="jackpotTable.length" [data]="pieChartJackpot"></google-chart>
+
+<div *ngIf="winnerTable.length">
+  <span class="home">Winner Table</span>
+  <ng2-smart-table style="font-size: 17px" [settings]="winnerSettings" [source]="winnerTable"></ng2-smart-table>
+</div>
